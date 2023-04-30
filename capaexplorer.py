@@ -144,7 +144,8 @@ def capa_place(items):
         if match_function:
             match_function.addTag(item.capability)
             if item.attack:
-                for tactic in item.attack:
+                for attack_dict in item.attack:
+                    tactic = attack_dict['tactic']
                     add_bookmark(match_function.getEntryPoint(), tactic, "CapaExplorer - Mitre ATT&CK")
 
         for label in item.label_list:
